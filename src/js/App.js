@@ -3,7 +3,7 @@ import SceneManager from "./lib/SceneManager";
 export default class Application {
 	constructor(param) {
 		this.elem     = param.elem || document.body
-		this.renderer = new PIXI.Renderer({ backgroundColor: 0x000000, backgroundAlpha: 0.5 })
+		this.renderer = new PIXI.Renderer({ backgroundColor: 0x000000, backgroundAlpha: 0.5, antialias: true })
 		this.stage    = new PIXI.Container()
 		this.ticker   = new PIXI.Ticker()
 		this.loader   = new PIXI.Loader()
