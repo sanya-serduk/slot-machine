@@ -23,14 +23,16 @@ export default class GameDisplayView extends PIXI.Container {
 
 		const back = new PIXI.Graphics()
 		back.beginFill(0x000000, 1)
-		back.drawRoundedRect(0, 0, reelsWidth, reelsHeight, 16)
+		back.drawRoundedRect(0, 0, reelsWidth, reelsHeight, 15)
 		back.endFill()
 
 		const border = new PIXI.Graphics()
-		border.lineTextureStyle({ width: 10, texture: app.loader.resources.display_border.texture })
-		border.drawRoundedRect(0, 0, reelsWidth - border.line.width, reelsHeight - border.line.width, 10)
-		border.endFill()
-		border.position.set(border.line.width/2, border.line.width/2)
+		border.lineTextureStyle({
+			width: 10,
+			texture: app.loader.resources.display_border.texture,
+			alignment: 0
+		})
+		border.drawRoundedRect(0, 0, reelsWidth, reelsHeight, 15)
 
 		this.addChild(back, reels, border)
 	}
